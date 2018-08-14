@@ -1,0 +1,14 @@
+{% extends 'navbar.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+    <div class="container">
+        <section>
+            <h1 class="display-4">User</h1>
+            <article class="text-center">
+                <p class="lead">Name : {{ user.name }}</p>
+                <p class="lead">Firstname : {{ user.firstname }}</p>
+            </article>
+        </section>
+    </div>
+{% endblock %}
