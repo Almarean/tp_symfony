@@ -24,23 +24,49 @@ class RegistrationController extends Controller
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             
-            // 3) encode the password
-            $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
-            $user->setPassword($password);
+            if ($this->findOneByMail($user->getMail()) === null) {
+                // 3) encode the password
+                $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
+                $user->setPassword($password);
 
-            // 4) save the User!
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
+                // 4) save the User!
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($user);
+                $entityManager->flush();
 
-            return $this->render(
-                'registration/register.html.twig',
-                array('form' => $form->createView())
-            );
+                return $this->render(
+                    'registration/register.html.twig',
+                    array(
+                        'form' => $form->createView(),
+                        'text_alert' => 'You have been registered !',
+                        'class_alert' => 'alert-success'
+                    )
+                );
+            } else {
+                return $this->render(
+                    'registration/register.html.twig',
+                    array(
+                        'form' => $form->createView(),
+                        'text_alert' => 'You have been already registered !',
+                        'class_alert' => 'alert-danger'
+                    )
+                );
+            }
+            
+            
         }
         return $this->render(
             'registration/register.html.twig',
             array('form' => $form->createView())
         );
+    }
+    
+    private function findOneByMail(string $mail)
+    {
+        $repository = $this->getDoctrine()->getManager()->getRepository(User::class);
+        $result = $repository->findOneBy(array(
+            'mail' => $mail
+        ));
+        return $result;
     }
 }

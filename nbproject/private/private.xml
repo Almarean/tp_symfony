@@ -5,6 +5,9 @@
         <group>
             <file>file:/D:/wamp/www/tp_symfony/src/Controller/LoginController.php</file>
             <file>file:/D:/wamp/www/tp_symfony/templates/user.html.twig</file>
+            <file>file:/D:/wamp/www/tp_symfony/config/packages/security.yaml</file>
+            <file>file:/D:/wamp/www/tp_symfony/templates/navbar.html.twig</file>
+            <file>file:/D:/wamp/www/tp_symfony/templates/login/index.html.twig</file>
         </group>
     </open-files>
 </project-private>
