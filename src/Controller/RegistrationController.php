@@ -51,9 +51,7 @@ class RegistrationController extends Controller
                         'class_alert' => 'alert-danger'
                     )
                 );
-            }
-            
-            
+            }            
         }
         return $this->render(
             'registration/register.html.twig',

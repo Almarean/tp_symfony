@@ -2,12 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/wamp/www/tp_symfony/src/Controller/LoginController.php</file>
-            <file>file:/D:/wamp/www/tp_symfony/templates/user.html.twig</file>
-            <file>file:/D:/wamp/www/tp_symfony/config/packages/security.yaml</file>
-            <file>file:/D:/wamp/www/tp_symfony/templates/navbar.html.twig</file>
-            <file>file:/D:/wamp/www/tp_symfony/templates/login/index.html.twig</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
